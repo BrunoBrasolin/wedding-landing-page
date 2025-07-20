@@ -15,7 +15,7 @@ const paths = {
 
 function html() {
   return src(paths.html)
-    .pipe(dest('dist'))
+    .pipe(dest('docs'))
     .pipe(browserSync.stream());
 }
 
@@ -27,7 +27,7 @@ function styles() {
     .pipe(cleanCSS())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist'))
+    .pipe(dest('docs'))
     .pipe(browserSync.stream());
 }
 
@@ -36,19 +36,19 @@ function scripts() {
     .pipe(sourcemaps.init())
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest('dist'))
+    .pipe(dest('docs'))
     .pipe(browserSync.stream());
 }
 
 function images() {
   return src(paths.images)
-    .pipe(dest('dist/images'))
+    .pipe(dest('docs/images'))
     .pipe(browserSync.stream());
 }
 
 function serve() {
   browserSync.init({
-    server: { baseDir: 'dist' }
+    server: { baseDir: 'docs' }
   });
   watch(paths.html, html);
   watch(paths.styles, styles);
