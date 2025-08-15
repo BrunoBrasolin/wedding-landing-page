@@ -12,60 +12,77 @@ header.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 3rem 1rem 1rem;
-  max-width: 1200px;
+  height: 60vh;
+  text-align: center;
 
   .text {
-    margin: .75rem 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: .7px;
+
+    &.bless {
+      margin-bottom: 0.25rem;
+    }
+
+    &.song {
+      margin-bottom: 0.75rem;
+    }
   }
 
-  .parents-row {
+  .middle {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     width: 100%;
 
-    .parent-group {
+    .parents-row {
       display: flex;
-      flex-direction: column;
-      margin: .5rem 0;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
 
-      .parent {
+      .parent-group {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         margin: .5rem 0;
 
-        svg {
-          margin-left: .5rem;
-          ;
+        .parent {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: .5rem 0;
+
+          svg {
+            margin-left: .5rem;
+            ;
+          }
         }
       }
     }
+  }
 
-    .patinha-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .patinha-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-      .logo {
-        position: relative;
-        z-index: 1;
-        width: auto;
-        height: 100px;
-      }
+    .logo {
+      position: relative;
+      z-index: 1;
+      width: auto;
+      height: 60px;
+    }
 
-      .patinha {
-        position: absolute;
-        width: auto;
-        height: 100px;
-        opacity: .8;
-      }
+    .patinha {
+      position: absolute;
+      width: auto;
+      height: 90px;
+      opacity: 0.5;
+      transform: rotate(15deg);
     }
   }
 
@@ -75,6 +92,13 @@ header.hero {
     .image {
       width: 100%;
     }
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 0.5rem;
   }
 }
 
