@@ -1,83 +1,39 @@
-// Countdown Timer
 function initCountdown() {
   const weddingDate = new Date("2025-10-11T10:00:00").getTime()
 
   function updateCountdown() {
     const now = new Date().getTime()
-    const distance = weddingDate - now
+    const distance = weddingDate - now;
 
-    if (distance < 0) {
-      document.getElementById("countdown").innerHTML =
-        '<div class="countdown-item"><span class="countdown-number">🎉</span><span class="countdown-label">Casamos!</span></div>'
-      return
-    }
+    const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24) % 30);
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-
-    document.getElementById("days").textContent = days
-    document.getElementById("hours").textContent = hours
-    document.getElementById("minutes").textContent = minutes
-    document.getElementById("seconds").textContent = seconds
+    document.getElementById("months").textContent = months;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
   }
 
   updateCountdown()
   setInterval(updateCountdown, 1000)
 }
 
-// Carousel Functionality
-function initCarousel() {
-  const slides = document.querySelectorAll(".carousel-slide")
-  const prevBtn = document.getElementById("prevBtn")
-  const nextBtn = document.getElementById("nextBtn")
-  const dotsContainer = document.getElementById("carouselDots")
+function initGlide() {
+  new Glide('.glider-masculino', {
+    type: 'carousel',
+    perView: 1,
+    focusAt: 'center',
+    autoplay: 3000
+  }).mount();
 
-  let currentSlide = 0
-
-  // Create dots
-  slides.forEach((_, index) => {
-    const dot = document.createElement("div")
-    dot.classList.add("dot")
-    if (index === 0) dot.classList.add("active")
-    dot.addEventListener("click", () => goToSlide(index))
-    dotsContainer.appendChild(dot)
-  })
-
-  const dots = document.querySelectorAll(".dot")
-
-  function showSlide(index) {
-    slides.forEach((slide) => slide.classList.remove("active"))
-    dots.forEach((dot) => dot.classList.remove("active"))
-
-    slides[index].classList.add("active")
-    dots[index].classList.add("active")
-  }
-
-  function goToSlide(index) {
-    currentSlide = index
-    showSlide(currentSlide)
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length
-    showSlide(currentSlide)
-  }
-
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length
-    showSlide(currentSlide)
-  }
-
-  nextBtn.addEventListener("click", nextSlide)
-  prevBtn.addEventListener("click", prevSlide)
-
-  // Auto-advance carousel every 5 seconds
-  setInterval(nextSlide, 5000)
+  new Glide('.glider-feminino', {
+    type: 'carousel',
+    perView: 1,
+    focusAt: 'center',
+    autoplay: 3000
+  }).mount();
 }
 
-// Message Form Functionality
 function initMessageForm() {
   const form = document.getElementById("messageForm")
   const messagesList = document.getElementById("messagesList")
@@ -136,9 +92,8 @@ function initMessageForm() {
   }
 }
 
-// Initialize all functionality when page loads
 document.addEventListener("DOMContentLoaded", () => {
-  initCountdown()
-  initCarousel()
-  initMessageForm()
+  initCountdown();
+  initMessageForm();
+  initGlide();
 })

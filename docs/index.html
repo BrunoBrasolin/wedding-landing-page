@@ -11,11 +11,19 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
   <link rel="stylesheet" href="styles.min.css">
 </head>
 
 <body>
+
   <header class="hero">
+    <div class="patinha-group">
+      <img src="images/logo.png" class="logo">
+      <img src="images/patinha_clara.png" class="patinha">
+    </div>
+
     <span class="text song">"ALL IN ALL IS ALL WE ARE" - Nirvana</span>
 
     <div class="middle">
@@ -38,12 +46,6 @@
       </div>
     </div>
 
-
-    <!-- <div class="patinha-group">
-      <img src="images/logo.png" class="logo">
-      <img src="images/patinha_clara.png" class="patinha">
-    </div> -->
-
     <div class="image-parent">
       <img src="images/titulo.png" class="image">
     </div>
@@ -51,9 +53,13 @@
     <div class="bottom">
       <span class="text">Convidam para a celebração de seu casamento</span>
       <h2>11 de Outubro de 2025, às 10h00</h2>
-      
+
       <div class="countdown-container">
         <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="months">0</span>
+            <span class="countdown-label">Mês</span>
+          </div>
           <div class="countdown-item">
             <span class="countdown-number" id="days">0</span>
             <span class="countdown-label">Dias</span>
@@ -62,66 +68,98 @@
             <span class="countdown-number" id="hours">0</span>
             <span class="countdown-label">Horas</span>
           </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="minutes">0</span>
-            <span class="countdown-label">Minutos</span>
-          </div>
-          <div class="countdown-item">
-            <span class="countdown-number" id="seconds">0</span>
-            <span class="countdown-label">Segundos</span>
-          </div>
         </div>
       </div>
     </div>
   </header>
 
+  <section id="local-cerimonia">
+    <h2>Local da cerimônia</h2>
+    <img src="/images/recanto_moreira.webp" alt="Recanto Moreira">
+    <b class="local">Rua José Bonifácio, 3270 - Jardim Leonor Jussara, Mongaguá - SP</b>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.807010571457!2d-46.70982968833666!3d-24.10828138182429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce290b70dcaf6b%3A0xeeaf2fd2071035ef!2sRecanto%20Moreira%20Oficial!5e0!3m2!1sen!2sbr!4v1753044967862!5m2!1sen!2sbr"
+      allowfullscreen="" loading="lazy"></iframe>
+    <i class="aviso">Cuidado ao pesquisar Recanto Moreira no Google Maps pois aparece outro endereço!</i>
+    <i class="aviso">Estacionamento no local liberado após 12:00</i>
+  </section>
+
+  <section id="trajes">
+    <h2>Traje masculino - <i>referências</i></h2>
+    <div class="glide-parent">
+      <div class="glide glider-masculino">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="/images/traje_masculino_1.png" alt="Traje Masculino">
+            </li>
+            <li class="glide__slide">
+              <img src="/images/traje_masculino_2.png" alt="Traje Masculino">
+            </li>
+            <li class="glide__slide">
+              <img src="/images/traje_masculino_3.png" alt="Traje Masculino">
+            </li>
+          </ul>
+        </div>
+
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+      </div>
+    </div>
+
+    <h2>Traje feminino - <i>referências</i></h2>
+    <div class="glide-parent">
+      <div class="glide glider-feminino">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <img src="/images/traje_feminino_1.png" alt="Traje Feminino">
+            </li>
+            <li class="glide__slide">
+              <img src="/images/traje_feminino_2.png" alt="Traje Feminino">
+            </li>
+            <li class="glide__slide">
+              <img src="/images/traje_feminino_3.png" alt="Traje Feminino">
+            </li>
+          </ul>
+        </div>
+
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="detalhes-evento">
     <h2>Detalhes do Evento</h2>
     <ul>
-      <li><strong>Local:</strong> Recanto Moreira</li>
       <li><strong>Confirmação de presença:</strong> Nossa assessora entrará em contato em breve para confirmar sua
         presença e auxiliar em qualquer necessidade</li>
       <li>Recomendamos chegar com 30 minutos de antecedência para melhor aproveitamento.</li>
       <li>Estacionamento gratuito disponível no próprio local.</li>
       <li>Serviremos café da manhã antes da cerimônia para recepcioná-los com carinho.</li>
     </ul>
-    <div class="mapa">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.807010571457!2d-46.70982968833666!3d-24.10828138182429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce290b70dcaf6b%3A0xeeaf2fd2071035ef!2sRecanto%20Moreira%20Oficial!5e0!3m2!1sen!2sbr!4v1753044967862!5m2!1sen!2sbr"
-        allowfullscreen="" loading="lazy"></iframe>
-    </div>
   </section>
 
   <section id="presente">
     <h2>Lista de Presentes</h2>
-    <a class="btn-registry" href="https://www.havan.com.br" target="_blank">Conheça nossa lista na Havan</a>
-    <p class="lembrete">Sua presença é o nosso maior presente. Itens são bem-vindos, mas não obrigatórios.</p>
-  </section>
 
-  <section id="galeria">
-    <h2>Galeria de Fotos</h2>
-    <div class="carousel-container">
-      <div class="carousel" id="carousel">
-        <div class="carousel-slide active">
-          <img src="/placeholder.svg?height=400&width=600" alt="Foto do casal 1">
-        </div>
-        <div class="carousel-slide">
-          <img src="/placeholder.svg?height=400&width=600" alt="Foto do casal 2">
-        </div>
-        <div class="carousel-slide">
-          <img src="/placeholder.svg?height=400&width=600" alt="Foto do casal 3">
-        </div>
-        <div class="carousel-slide">
-          <img src="/placeholder.svg?height=400&width=600" alt="Foto do casal 4">
-        </div>
-        <div class="carousel-slide">
-          <img src="/placeholder.svg?height=400&width=600" alt="Foto do casal 5">
-        </div>
-      </div>
-      <button class="carousel-btn prev" id="prevBtn">❮</button>
-      <button class="carousel-btn next" id="nextBtn">❯</button>
-      <div class="carousel-dots" id="carouselDots"></div>
-    </div>
+    <a class="presente-button" href="https://lista.havan.com.br/Convidado/ItensListaPresente/774243" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-0.75 -0.75 16 16" stroke="#ffffff"
+        aria-hidden="true" height="16" width="16">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12.6875 6.796875v4.984375a0.90625 0.90625 0 0 1 -0.90625 0.90625H3.171875a0.90625 0.90625 0 0 1 -0.90625 -0.90625v-4.984375M7.25 2.9453125A1.5859375 1.5859375 0 1 0 5.6640625 4.53125H7.25m0 -1.5859375V4.53125m0 -1.5859375A1.5859375 1.5859375 0 1 1 8.8359375 4.53125H7.25m0 0V12.6875m-5.2109375 -5.890625h10.875c0.37518749999999995 0 0.6796875 -0.3045 0.6796875 -0.6796875v-0.90625c0 -0.37518749999999995 -0.3045 -0.6796875 -0.6796875 -0.6796875h-10.875c-0.37518749999999995 0 -0.6796875 0.3045 -0.6796875 0.6796875v0.90625c0 0.37518749999999995 0.3045 0.6796875 0.6796875 0.6796875Z"
+          stroke-width="1.5"></path>
+      </svg>
+      Conheça nossa lista na Havan
+    </a>
+    <p class="lembrete">Sua presença é o nosso maior presente. Itens são bem-vindos, mas não obrigatórios.</p>
   </section>
 
   <section id="mensagens">
@@ -138,11 +176,12 @@
       </div>
       <div class="form-group">
         <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" rows="4" required placeholder="Escreva sua mensagem de felicitações..."></textarea>
+        <textarea id="message" name="message" rows="4" required
+          placeholder="Escreva sua mensagem de felicitações..."></textarea>
       </div>
       <button type="submit" class="btn-submit">Enviar Mensagem</button>
     </form>
-    
+
     <div class="messages-display" id="messagesDisplay">
       <h3>Mensagens Recebidas</h3>
       <div class="messages-list" id="messagesList">
@@ -150,6 +189,7 @@
     </div>
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
   <script src="main.min.js"></script>
 </body>
 
