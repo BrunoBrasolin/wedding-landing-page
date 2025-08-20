@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 body {
   padding: 0 1rem;
   font-family: "Cormorant SC", serif;
@@ -225,9 +231,6 @@ section {
       input,
       textarea {
         width: 100%;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         padding: 0.75rem;
         border: 2px solid #ddd;
         border-radius: 5px;
