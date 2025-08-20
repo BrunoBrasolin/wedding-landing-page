@@ -136,17 +136,6 @@
     </div>
   </section>
 
-  <section id="detalhes-evento">
-    <h2>Detalhes do Evento</h2>
-    <ul>
-      <li><strong>Confirmação de presença:</strong> Nossa assessora entrará em contato em breve para confirmar sua
-        presença e auxiliar em qualquer necessidade</li>
-      <li>Recomendamos chegar com 30 minutos de antecedência para melhor aproveitamento.</li>
-      <li>Estacionamento gratuito disponível no próprio local.</li>
-      <li>Serviremos café da manhã antes da cerimônia para recepcioná-los com carinho.</li>
-    </ul>
-  </section>
-
   <section id="presente">
     <h2>Lista de Presentes</h2>
 
@@ -162,31 +151,37 @@
     <p class="lembrete">Sua presença é o nosso maior presente. Itens são bem-vindos, mas não obrigatórios.</p>
   </section>
 
+  <section id="detalhes-evento">
+    <h2>Informações adicionais</h2>
+    <ul>
+      <li><strong>Confirmação de presença:</strong> Nossa assessora entrará em contato em breve para confirmar sua
+        presença e auxiliar em qualquer necessidade</li>
+      <li>Recomendamos chegar com 30 minutos de antecedência para melhor aproveitamento.</li>
+      <li>Estacionamento gratuito disponível no próprio local.</li>
+      <li>Serviremos café da manhã antes da cerimônia para recepcioná-los com carinho.</li>
+    </ul>
+  </section>
+
+  <section id="fotos">
+    <h2>Um pouco da nossa história</h2>
+  </section>
+
   <section id="mensagens">
     <h2>Deixe sua Mensagem</h2>
     <p>Compartilhe seus votos de felicidade e carinho conosco!</p>
-    <form class="message-form" id="messageForm">
+    <form class="formulario" id="messageForm">
       <div class="form-group">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email (opcional):</label>
-        <input type="email" id="email" name="email">
       </div>
       <div class="form-group">
         <label for="message">Mensagem:</label>
         <textarea id="message" name="message" rows="4" required
           placeholder="Escreva sua mensagem de felicitações..."></textarea>
       </div>
-      <button type="submit" class="btn-submit">Enviar Mensagem</button>
-    </form>
 
-    <div class="messages-display" id="messagesDisplay">
-      <h3>Mensagens Recebidas</h3>
-      <div class="messages-list" id="messagesList">
-      </div>
-    </div>
+      <button type="submit" class="butao">Enviar Mensagem</button>
+    </form>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
