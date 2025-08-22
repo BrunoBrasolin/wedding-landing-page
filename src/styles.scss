@@ -223,12 +223,20 @@ section {
 #fotos {
   .glide-parent {
     margin: 0 auto;
+    max-width: 320px;
 
     .glider-historia {
-      img {
-        width: 100%;
-        height: 445px;
-        object-fit: cover;
+
+      .glide__slide {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 445px;
+          object-fit: cover;
+          margin: 0 auto;
+        }
       }
     }
 
@@ -243,6 +251,7 @@ section {
         background: transparent;
         border: 1px solid #000;
         margin-top: 0.5rem;
+        cursor: pointer;
 
         &.left {
           border-top-left-radius: 5px;
