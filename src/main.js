@@ -5,13 +5,15 @@ function initCountdown() {
     const now = new Date().getTime()
     const distance = weddingDate - now;
 
-    const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30));
     const days = Math.floor(distance / (1000 * 60 * 60 * 24) % 30);
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("months").textContent = months;
     document.getElementById("days").textContent = days;
     document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
   }
 
   updateCountdown()
@@ -31,6 +33,16 @@ function initGlide() {
     perView: 1,
     focusAt: 'center',
     autoplay: 3000
+  }).mount();
+
+  new Glide('.glider-historia', {
+    type: 'carousel',
+    perView: 1,
+    autoplay: 3000,
+    arrows: {
+      prev: '.glider-prev',
+      next: '.glider-next'
+    }
   }).mount();
 }
 
@@ -94,6 +106,6 @@ function initMessageForm() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initCountdown();
-  initMessageForm();
+  // initMessageForm();
   initGlide();
 })
